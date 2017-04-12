@@ -31,7 +31,7 @@ preface: >
   (for LaTeX) and the R bookdown package, in general.
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
-csl: csl/apa.csl
+csl: csl/harvard-institute-of-education-2.csl
 # Download your specific csl file and refer to it in the line above.
 lot: true
 lof: true
