@@ -1,4 +1,4 @@
-name:  Thesis
+name:  ThesisUCL
 description: >
- Template for creating a Senior Thesis at Reed College using R Markdown based on the Reed College LaTeX and Word templates and the R bookdown package.
+ Template for creating a PhD, MRes or MPhil thesis in using R Markdown based on the UCL LaTeX template and the R bookdown package.
 
