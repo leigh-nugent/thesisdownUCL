@@ -3,7 +3,7 @@ Title: An updated R Markdown thesis template using the bookdown package updated 
 Version: 0.0.2
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
-    person("Matthew", "benyohai", email = "mrbenyohai@physics.org", role = c("cre", "ctb")))
+    person("Matthew", "benyohai", email = "mrbenyohai@physics.org", role = c("cre", "ctb"))
 Description: Using the bookdown package and LaTeX thesis template from
     UCL, this package aims to encourage reproducible research using
     simple Markdown syntax while embedding all of the R code to produce plots
