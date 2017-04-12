@@ -124,6 +124,7 @@
 \newcommand \@doctor{Doctor of Philosophy}
 \newcommand \@master{Master of Philosophy}
 \newcommand \@mres{Master of Research}
+\newcommand \@ma{Master of Arts}
 \newcommand \@degree@string{\@doctor}
 %    \end{macrocode}
 %  The usual structure of class preamble follows.
@@ -135,13 +136,15 @@
 %  flag and ensure that the appropriate options are passed onto the superclass.
 %    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}[1997/12/01]
-\ProvidesClass{ucl_thesis}[\filedate\space\fileversion\space UCL MRes/MPhil/PhD Thesis class]
+\ProvidesClass{ucl_thesis}[\filedate\space\fileversion\space UCL MA/MRes/MPhil/PhD Thesis class]
 \DeclareOption{mres}{\renewcommand\@degree@string{\@mres}}
 \DeclareOption{MRes}{\renewcommand\@degree@string{\@mres}}
 \DeclareOption{mphil}{\renewcommand\@degree@string{\@master}}
 \DeclareOption{MPhil}{\renewcommand\@degree@string{\@master}}
 \DeclareOption{phd}{\renewcommand\@degree@string{\@doctor}}
 \DeclareOption{PhD}{\renewcommand\@degree@string{\@doctor}}
+\DeclareOption{ma}{\renewcommand\@degree@string{\@ma}}
+\DeclareOption{MA}{\renewcommand\@degree@string{\@ma}}
 \DeclareOption{twocolumn}{\ClassError{ucl_thesis}{Option `twocolumn' not supported for UCL theses}{}}
 \newif \if@draftmode
 \@draftmodefalse
