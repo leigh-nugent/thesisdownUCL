@@ -1,4 +1,4 @@
-name:  ThesisUCL
+name:  thesis-UCL
 description: >
  Template for creating a PhD, MRes or MPhil thesis in using R Markdown based on the UCL LaTeX template and the R bookdown package.
 
