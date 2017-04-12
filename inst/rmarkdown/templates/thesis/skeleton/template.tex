@@ -24,7 +24,7 @@
 %% Preamble
 %%
 % \documentclass{<something>} must begin each LaTeX document
-\documentclass[12pt,twoside]{reedthesis}
+\documentclass[12pt,phd,a4paper,twoside]{ucl_thesis}
 % Packages are extensions to the basic LaTeX functions. Whatever you
 % want to typeset, there is probably a package out there for it.
 % Chemistry (chemtex), screenplays, you name it.
@@ -32,12 +32,28 @@
 %%
 \usepackage{graphicx,latexsym}
 \usepackage{amsmath}
+\usepackage{fancyhdr}
 \usepackage{amssymb,amsthm}
 \usepackage{longtable,booktabs,setspace}
+\setstretch{1.5}
 \usepackage{chemarr} %% Useful for one reaction arrow, useless if you're not a chem major
 \usepackage[hyphens]{url}
 % Added by CII
-\usepackage{hyperref}
+\usepackage{bibentry}
+\makeatletter\let\saved@bibitem\@bibitem\makeatother
+\usepackage[pdftex,hidelinks]{hyperref}
+\makeatletter\let\@bibitem\saved@bibitem\makeatother
+\makeatletter
+\AtBeginDocument{
+    \hypersetup{
+        pdfsubject={Thesis Subject},
+        pdfkeywords={Thesis Keywords},
+        pdfauthor={Author},
+        pdftitle={Title},
+    }
+}
+\makeatother
+    
 \usepackage{lmodern}
 \usepackage{float}
 \floatplacement{figure}{H}
@@ -74,8 +90,8 @@
 \author{$author$}
 % The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
 \date{$date$}
-\division{$division$}
-\advisor{$advisor$}
+%\division{$division$}
+%\advisor{$advisor$}
 %If you have two advisors for some reason, you can use the following
 % Uncommented out by CII
 $if(altadvisor)$
@@ -121,25 +137,10 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-\Acknowledgements{
-$acknowledgements$
-}
 
-\Dedication{
-$dedication$
-}
-
-\Preface{
-$preface$
-}
-
-\Abstract{
-$abstract$
-}
-
-$for(header-includes)$
-	$header-includes$
-$endfor$
+%$for(header-includes)$
+%	$header-includes$
+%$endfor$
 % End of CII addition
 %%
 %% End Preamble
@@ -148,39 +149,15 @@ $endfor$
 
 \begin{document}
 
+%  \frontmatter % this stuff will be roman-numbered
+ % \pagestyle{empty} % this removes page numbers from the frontmatter
+
 % Everything below added by CII
   $if(title)$
     \maketitle
   $endif$
 
-  \frontmatter % this stuff will be roman-numbered
-  \pagestyle{empty} % this removes page numbers from the frontmatter
-
-  $if(acknowledgements)$
-    \begin{acknowledgements}
-      $acknowledgements$
-    \end{acknowledgements}
-  $endif$
-
-  $if(preface)$
-    \begin{preface}
-      $preface$
-    \end{preface}
-  $endif$
-
-  $if(toc)$
-    \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
-    \setcounter{tocdepth}{$toc-depth$}
-    \tableofcontents
-  $endif$
-
-  $if(lot)$
-    \listoftables
-  $endif$
-
-  $if(lof)$
-    \listoffigures
-  $endif$
+\makedeclaration
 
   $if(abstract)$
     \begin{abstract}
@@ -188,14 +165,29 @@ $endfor$
     \end{abstract}
   $endif$
 
-  $if(dedication)$
-    \begin{dedication}
-      $dedication$
-    \end{dedication}
+  $if(acknowledgements)$
+    \begin{acknowledgements}
+      $acknowledgements$
+    \end{acknowledgements}
   $endif$
 
-  \mainmatter % here the regular arabic numbering starts
-  \pagestyle{fancyplain} % turns page numbering back on
+  $if(toc)$
+    \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+   \setcounter{tocdepth}{2} 
+    \tableofcontents
+  $endif$
+
+ $if(lof)$
+    \listoffigures
+  $endif$
+
+  $if(lot)$
+    \listoftables
+  $endif$
+
+
+%  \mainmatter % here the regular arabic numbering starts
+% \pagestyle{fancyplain} % turns page numbering back on
 
   $body$
 
