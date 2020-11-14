@@ -54,7 +54,7 @@
     }
 }
 \makeatother
-    
+
 \usepackage{lmodern}
 \usepackage{float}
 \floatplacement{figure}{H}
@@ -124,6 +124,15 @@ $endif$
 }
 \makeatother
 
+% Added by @leigh-nugent, code by @Nicktz
+% (https://github.com/rstudio/rmarkdown/issues/1649#issuecomment-717176839)
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}%
+{\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+{\par}
+
 \renewcommand{\contentsname}{Table of Contents}
 % End of CII addition
 
@@ -174,7 +183,7 @@ $endif$
 
   $if(toc)$
     \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
-   \setcounter{tocdepth}{2} 
+   \setcounter{tocdepth}{2}
     \tableofcontents
   $endif$
 
