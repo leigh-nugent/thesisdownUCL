@@ -2,8 +2,8 @@ Package: thesisdownUCL
 Title: An updated R Markdown thesis template using the bookdown package updated to match the UCL requirements
 Version: 0.1.0
 Authors@R: c(
-    person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = c("cre", "aut")),
-    person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"))
+    person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
+    person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
     person("Matthew", "Benyohai", email = "mrbenyohai@physics.org", role = c("cre", "ctb")))
 Description: Using the bookdown package and LaTeX thesis template from
     UCL, this package aims to encourage reproducible research using
